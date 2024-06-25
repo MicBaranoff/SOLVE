@@ -1,9 +1,9 @@
 <template>
-  <div>
+  <NuxtLayout name="default">
     <NuxtPage />
-  </div>
+  </NuxtLayout>
 </template>
 
 <script setup lang="ts">
-import '@unocss/reset/tailwind-compat.css'
+import Header from "~/components/layout/Header/Header.vue";
 </script>
