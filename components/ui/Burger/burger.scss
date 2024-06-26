@@ -1,0 +1,33 @@
+.burger {
+  width: em(50);
+  height: em(50);
+  position: relative;
+
+  span {
+    display: block;
+    position: absolute;
+    width: em(50);
+    height: 1px;
+    top: em(20);
+    right: 0;
+    background: $text-color;
+    transition: all .2s ease;
+
+    &:nth-child(2) {
+      width: em(40);
+      top: em(30);
+    }
+  }
+
+  &--active {
+    span:nth-child(1) {
+      transform: rotate(45deg);
+      top: 50%;
+    }
+    span:nth-child(2) {
+      width: em(50);
+      transform: rotate(-45deg);
+      top: 50%;
+    }
+  }
+}

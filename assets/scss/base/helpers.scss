@@ -1,0 +1,38 @@
+﻿.mobile-hide {
+  @include is-mobile {
+    display: none !important;
+  }
+}
+
+.desktop-hide {
+  @include is-desktop {
+    display: none !important;
+  }
+}
+
+.desktop-and-tablet-hide {
+  @include is-desktop {
+    display: none !important;
+  }
+
+  @include is-tablet {
+    display: none !important;
+  }
+}
+
+.pointer-none {
+  user-select: none;
+  pointer-events: none;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+
+// fix for IOS keyboard on input focus
+@keyframes blink_input_opacity_to_prevent_scrolling_when_focus_ios {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+

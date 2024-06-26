@@ -3,18 +3,60 @@
   top: 0;
   left: 0;
   right: 0;
-  padding-top: 100px;
-  z-index: 100;
-  background: #fff;
+  z-index: 999;
+
+  &__font {
+    &-text {
+      text-transform: uppercase;
+      text-decoration: none;
+      font-size: em(16);
+      letter-spacing: 0.06em;
+    }
+
+    &-count {
+      text-decoration: none;
+      font-size: em(12);
+      letter-spacing: 0.06em;
+    }
+  }
 
   &__wrapper {
     margin: 0 auto;
     width: 100%;
-    max-width: em(1024);
+    padding: em(63) em(60) 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
-  h1 {
-    font-size: em(50);
-    color: red;
+  &__counter {
+    width: em(22);
+    height: em(22);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: $text-color;
+    color: $text-color-invert;
+    margin-left: em(8);
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+  }
+
+  &__wrap {
+    display: flex;
+    gap: em(48);
+  }
+
+  &__logo {
+    width: em(94);
+    height: em(35);
+  }
+
+  &__burger {
+    span {}
   }
 }

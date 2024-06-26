@@ -1,0 +1,113 @@
+// Paths
+// -------------------------
+// $images-base-url get from process.env.STATIC_IMAGES_URL
+// watch nuxt.config.js
+// if no env var used '/images/' for base url
+$img-path: $images-base-url;
+$font-path: $fonts-base-url;
+
+// Typography
+// -------------------------
+$base-font-size: 16;
+$large-font-size: 21;
+$base-line-height: 1.25 !default;
+
+$sans: sans-serif !default;
+$serif: serif !default;
+
+$thin: 100 !default;
+$ultra-light: 200 !default;
+$light: 300 !default;
+$regular: 400 !default;
+$medium: 500 !default;
+$semi-bold: 600 !default;
+$bold: 700 !default;
+$ultra-bold: 800 !default;
+$black-bold: 900 !default;
+
+$wide: 'NewYork', $sans !default;
+$text: 'CabinetGrotesk', $sans !default;
+
+$font-default: $text;
+$font-accent: $wide;
+
+// Colors
+// -------------------------
+$color-primary-0: #000000;
+$color-primary-100: #1d2023;
+$color-primary-150: #2b2b2b;
+$color-primary-350: #383838;
+$color-primary-360: #393939;
+$color-primary-400: #6f6f6f;
+$color-primary-500: #7f7f7f;
+$color-primary-550: #898989;
+$color-primary-600: #d5d5d8;
+$color-primary-650: #d9d9d9;
+$color-primary-700: #f2f3f7;
+$color-primary-900: #ffffff;
+
+$color-secondary-200: #0c82ff;
+$color-secondary-300: #14f316;
+
+$text-color: #343339;
+$text-color-invert: $color-primary-900;
+
+// Links
+// -------------------------
+$link-color: $text-color !default;
+$link-color-hover: darken($text-color, 10%) !default;
+
+// Easing presets
+// --------------------------
+$linear: cubic-bezier(0.25, 0.25, 0.75, 0.75);
+$bounce: cubic-bezier(0.47, 1.64, 0.41, 0.8);
+$ease: cubic-bezier(0.25, 0.1, 0.25, 1);
+$ease-in: cubic-bezier(0.42, 0, 1, 1);
+$ease-in-quad: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+$ease-in-cubic: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+$ease-in-quart: cubic-bezier(0.895, 0.03, 0.685, 0.22);
+$ease-in-quint: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+$ease-in-sine: cubic-bezier(0.47, 0, 0.745, 0.715);
+$ease-in-expo: cubic-bezier(0.95, 0.05, 0.795, 0.035);
+$ease-in-circ: cubic-bezier(0.6, 0.04, 0.98, 0.335);
+$ease-out: cubic-bezier(0, 0, 0.58, 1);
+$ease-out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+$ease-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);
+$ease-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);
+$ease-out-quint: cubic-bezier(0.23, 1, 0.32, 1);
+$ease-out-sine: cubic-bezier(0.39, 0.575, 0.565, 1);
+$ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+$ease-out-circ: cubic-bezier(0.075, 0.82, 0.165, 1);
+$ease-in-out: cubic-bezier(0.42, 0, 0.58, 1);
+$ease-in-out-quad: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+$ease-in-out-cubic: cubic-bezier(0.645, 0.045, 0.355, 1);
+$ease-in-out-quart: cubic-bezier(0.77, 0, 0.175, 1);
+$ease-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1);
+$ease-in-out-sine: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+$ease-in-out-expo: cubic-bezier(1, 0, 0, 1);
+$ease-in-out-circ: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+
+// Animation
+// -------------------------
+$trans-time: 0.3s;
+$trans-time-super-fast: $trans-time * 0.25;
+$trans-time-fast: $trans-time * 0.5;
+$trans-time-slow: $trans-time * 1.5;
+$trans-time-super-slow: $trans-time * 2;
+$ease-default: $ease;
+
+// Z-index
+$level-0: 0;
+$level-1: 10;
+$level-2: 20;
+$level-3: 30;
+$level-4: 40;
+$level-5: 50;
+$level-6: 60;
+$level-7: 70;
+$level-8: 80;
+$level-9: 90;
+$level-10: 100;
+$level-20: 200;
+$level-30: 300;
+$level-40: 400;

@@ -21,8 +21,8 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/device',
     '@pinia/nuxt',
-    'unplugin-icons/nuxt',
-    '@vueuse/nuxt'
+    '@vueuse/nuxt',
+    'nuxt-icons'
   ],
   vite: {
     css: {

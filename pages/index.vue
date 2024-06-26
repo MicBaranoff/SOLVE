@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="background: #000">
     <Header />
   </div>
 </template>
