@@ -19,6 +19,12 @@
     }
   }
 
+  &--invert {
+    span {
+      background: $text-color-invert;
+    }
+  }
+
   &--active {
     span:nth-child(1) {
       transform: rotate(45deg);

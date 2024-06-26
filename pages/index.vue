@@ -1,16 +1,13 @@
-<template>
-  <div style="background: #000">
-    <Header />
-  </div>
-</template>
-
-<script lang="ts" setup>
-import Header from "~/components/layout/Header/Header.vue";
-
-const { isMobile } = useDevice();
-
-console.log(isMobile);
-
+<script setup lang="ts">
+import MainBanner from "~/components/pages/main/MainBanner/MainBanner.vue";
 </script>
+
+<template>
+  <NuxtLayout name="default-invert">
+    <div class="main-page">
+      <MainBanner />
+    </div>
+  </NuxtLayout>
+</template>
 
 <style scoped></style>

@@ -1,4 +1,6 @@
 <script setup lang="ts">
+  import Header from "~/components/layout/Header/Header.vue";
+
   const { isMobile } = useDevice();
 
   useHead({
@@ -10,6 +12,7 @@
 
 <template>
   <div class="default-layout">
+    <Header />
     <slot></slot>
   </div>
 </template>

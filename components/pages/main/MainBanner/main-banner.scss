@@ -1,0 +1,31 @@
+.main-banner {
+  width: 100%;
+  height: 100dvh;
+  min-height: em(850);
+  background: url('images/pages/main/main-banner.jpg') center / cover no-repeat;
+
+  &__font {
+    &-title {
+      font-size: em(260);
+      line-height: 90%;
+      text-transform: uppercase;
+      text-align: center;
+      font-family: $font-accent;
+      color: $text-color-invert;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: em(1290);
+    height: 100%;
+    margin: 0 auto;
+  }
+
+  &__title {
+    margin-bottom: em(64);
+  }
+}

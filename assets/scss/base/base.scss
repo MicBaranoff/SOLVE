@@ -14,7 +14,7 @@ body {
   font-family: $font-default;
   line-height: $base-line-height;
   touch-action: none;
-  font-size: calc-between-width(1440, $base-font-size, 1920, $large-font-size);
+  font-size: calc-between-width(1920, $base-font-size, 2680, $large-font-size);
 
   &.is-mobile {
     font-size: 16px;

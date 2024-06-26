@@ -1,9 +1,36 @@
-<script setup lang="ts">
+<script lang="ts">
 import Burger from "~/components/ui/Burger/Burger.vue";
+
+import { defineComponent } from 'vue';
+import type { PropType } from 'vue';
+
+interface ComponentProps {
+  invert: boolean;
+}
+
+export default defineComponent({
+  name: 'Header',
+  components: { Burger },
+  props: {
+    invert: {
+      type: Boolean as PropType<boolean>,
+      default: false,
+    },
+  },
+
+  setup(props: ComponentProps) {
+    const { text, color, filled } = toRefs(props)
+
+    return {
+      text, color, filled
+    };
+  }
+
+});
 </script>
 
 <template>
-  <header class="header">
+  <header :class="{'header--invert': invert}" class="header">
     <div class="header__wrapper">
       <span class="header__font header__font-text">Lookbook</span>
       <a href="" class="header__logo">
@@ -20,7 +47,7 @@ import Burger from "~/components/ui/Burger/Burger.vue";
           </span>
         </a>
 
-        <Burger />
+        <Burger :invert="invert" />
       </div>
     </div>
   </header>

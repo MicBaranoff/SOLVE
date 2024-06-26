@@ -5,6 +5,29 @@
   right: 0;
   z-index: 999;
 
+  $parent: &;
+
+  &--invert {
+    color: $text-color-invert;
+
+    #{$parent} {
+      &__logo {
+        color: $text-color-invert;
+      }
+
+      &__font {
+        &-text {
+          color: $text-color-invert;
+        }
+      }
+
+      &__counter {
+        background: $text-color-invert;
+        color: $text-color;
+      }
+    }
+  }
+
   &__font {
     &-text {
       text-transform: uppercase;
@@ -54,9 +77,7 @@
   &__logo {
     width: em(94);
     height: em(35);
-  }
 
-  &__burger {
-    span {}
+    color: $text-color;
   }
 }

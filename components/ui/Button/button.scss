@@ -1,0 +1,30 @@
+.button {
+  -webkit-appearance: none;
+  margin: 0;
+  color: $text-color;
+  border: 1px solid;
+  border-radius: em(40);
+  padding: em(24) em(40);
+  display: inline-block;
+  width: auto;
+
+  $parent: &;
+
+  &__font {
+    &-text {
+      font-weight: $medium;
+      font-size: em(16);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+  }
+
+  &--color {
+    &-white {
+      color: $text-color-invert;
+    }
+    &-black {
+      color: $text-color;
+    }
+  }
+}
