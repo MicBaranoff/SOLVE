@@ -1,5 +1,6 @@
 <script setup lang="ts">
   import Header from "~/components/layout/Header/Header.vue";
+  import Popup from "~/components/ui/Popup/Popup.vue";
 
   const { isMobile } = useDevice();
 
@@ -14,6 +15,7 @@
   <div class="default-layout">
     <Header />
     <slot></slot>
+    <Popup></Popup>
   </div>
 </template>
 

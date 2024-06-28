@@ -1,15 +1,10 @@
 <script lang="ts">
-import { defineComponent, ref } from 'vue';
+import { defineComponent, defineEmits } from 'vue';
 import type { PropType } from 'vue';
 
 interface ComponentProps {
   invert: boolean;
-}
-
-const isActive = ref<boolean>(false)
-
-function toggle() {
-  isActive.value = !isActive.value
+  isActive: boolean;
 }
 
 export default defineComponent({
@@ -19,10 +14,19 @@ export default defineComponent({
       type: Boolean as PropType<boolean>,
       default: false,
     },
+    isActive: {
+      type: Boolean as PropType<boolean>,
+      default: false,
+    },
   },
+  emits: ['click'],
 
-  setup(props: ComponentProps) {
-    const { invert } = toRefs(props)
+  setup(props: ComponentProps, { emit }) {
+    const { invert, isActive } = toRefs(props);
+
+    const toggle = (isActive) => {
+      emit('click', isActive)
+    }
 
     return {
       invert, toggle, isActive
@@ -34,7 +38,7 @@ export default defineComponent({
 
 <template>
   <button
-      @click="toggle"
+      @click="toggle(isActive)"
       type="button"
       class="burger"
       :class="{

@@ -27,19 +27,14 @@
 //}
 
 .fade {
-  &-enter,
-  &-leave-to {
-    opacity: 0;
-  }
-
-  &-enter-to,
-  &-leave {
-    opacity: 1;
-  }
-
   &-enter-active,
   &-leave-active {
-    transition: opacity 0.7s $ease-out-cubic;
+    transition: opacity .5s ease;
+  }
+
+  &-enter-from,
+  &-leave-to {
+    opacity: 0;
   }
 }
 

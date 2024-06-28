@@ -1,11 +1,23 @@
 <script lang="ts">
-import Burger from "~/components/ui/Burger/Burger.vue";
-
-import { defineComponent } from 'vue';
+import { defineComponent, ref } from 'vue';
 import type { PropType } from 'vue';
+
+import Burger from '~/components/ui/Burger/Burger.vue';
+
+import { useEvent, useListen } from '~/composables/useEventBus';
 
 interface ComponentProps {
   invert: boolean;
+}
+
+const isActiveBurger = ref(false);
+
+function callPopup(isActiveStatus) {
+  isActiveBurger.value = !isActiveStatus;
+
+  isActiveBurger.value ?
+      useEvent('popup:open', { name: 'MenuPopup' }) :
+      useEvent('popup:close');
 }
 
 export default defineComponent({
@@ -18,11 +30,17 @@ export default defineComponent({
     },
   },
 
+  mounted() {
+    useListen('popup:close', () => {
+      isActiveBurger.value = false;
+    })
+  },
+
   setup(props: ComponentProps) {
     const { text, color, filled } = toRefs(props)
 
     return {
-      text, color, filled
+      text, color, filled, isActiveBurger, callPopup
     };
   }
 
@@ -47,7 +65,7 @@ export default defineComponent({
           </span>
         </a>
 
-        <Burger :invert="invert" />
+        <Burger @click="callPopup" :is-active="isActiveBurger" :invert="invert" />
       </div>
     </div>
   </header>
