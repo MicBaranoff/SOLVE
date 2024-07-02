@@ -1,0 +1,39 @@
+.text-section {
+  border-top: 1px solid $border-color;
+  padding: em(128) 0;
+
+  &__font {
+    &--title {
+      font-family: $font-accent;
+      font-size: em(128);
+      line-height: 110%;
+    }
+
+    &--text {
+      font-size: em(20);
+      line-height: 180%;
+    }
+  }
+
+  &__holder {
+    width: 100%;
+    max-width: em(1400);
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: space-between;
+    gap: em(80);
+  }
+
+  &__title {
+    width: em(660);
+  }
+
+  &__content {
+    width: em(660);
+  }
+
+  &__bottom {
+    margin-top: em(96);
+  }
+}

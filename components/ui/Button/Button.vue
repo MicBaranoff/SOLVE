@@ -1,34 +1,15 @@
-<script lang="ts">
-import { defineComponent } from 'vue';
-import type { PropType } from 'vue';
+<script setup lang="ts">
+import {defineProps} from 'vue';
 
 interface ComponentProps {
   color: string;
   filled: boolean;
 }
 
-export default defineComponent({
-  name: 'MyComponent',
-  props: {
-    color: {
-      type: String as PropType<string>,
-      default: 'black',
-    },
-    filled: {
-      type: Boolean as PropType<boolean>,
-      default: false,
-    },
-  },
-
-  setup(props: ComponentProps) {
-    const { text, color, filled } = toRefs(props)
-
-    return {
-      text, color, filled
-    };
-  }
-
-});
+const props = withDefaults(defineProps<ComponentProps>(), {
+  color: 'black',
+  filled: false,
+})
 </script>
 
 <template>

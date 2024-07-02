@@ -1,0 +1,23 @@
+.button-arrow {
+  -webkit-appearance: none;
+  border: none;
+  box-shadow: none;
+  display: flex;
+  align-items: center;
+  gap: em(16);
+
+  $parent: &;
+
+  &__font {
+    &-text {
+      font-weight: $medium;
+      font-size: em(16);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+  }
+
+  &__ico {
+    width: em(30);
+  }
+}

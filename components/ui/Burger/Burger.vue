@@ -1,39 +1,21 @@
-<script lang="ts">
-import { defineComponent, defineEmits } from 'vue';
-import type { PropType } from 'vue';
+<script setup lang="ts">
+import {defineEmits, defineProps} from 'vue';
 
 interface ComponentProps {
   invert: boolean;
   isActive: boolean;
 }
 
-export default defineComponent({
-  name: 'Burger',
-  props: {
-    invert: {
-      type: Boolean as PropType<boolean>,
-      default: false,
-    },
-    isActive: {
-      type: Boolean as PropType<boolean>,
-      default: false,
-    },
-  },
-  emits: ['click'],
+const emit = defineEmits(['click']);
 
-  setup(props: ComponentProps, { emit }) {
-    const { invert, isActive } = toRefs(props);
+const props = withDefaults(defineProps<ComponentProps>(), {
+  invert: false,
+  isActive: false,
+})
 
-    const toggle = (isActive) => {
-      emit('click', isActive)
-    }
-
-    return {
-      invert, toggle, isActive
-    };
-  }
-
-});
+const toggle = (isActive) => {
+  emit('click', isActive)
+}
 </script>
 
 <template>

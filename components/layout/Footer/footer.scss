@@ -1,0 +1,59 @@
+.footer {
+  border-top: 1px solid $border-color;
+  padding: em(128) 0 em(80);
+
+  &__font {
+    margin: 0;
+
+    &--text {
+      font-size: em(16);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    &--title {
+      font-family: $font-accent;
+      font-size: em(32);
+      line-height: 110%;
+      text-transform: uppercase;
+    }
+
+    &--copy {
+      font-size: em(18);
+      line-height: 160%;
+      text-align: center;
+    }
+  }
+
+  &__holder {
+    width: 100%;
+    max-width: em(1600);
+    margin: 0 auto;
+  }
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    gap: em(48);
+    margin-bottom: em(128);
+  }
+
+  &__link {
+    display: block;
+    margin-bottom: em(24);
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+
+  &__col {
+    text-align: center;
+    width: 100%;
+    max-width: em(314);
+  }
+
+  &__title {
+    margin-bottom: em(48);
+  }
+}

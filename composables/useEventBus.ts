@@ -11,7 +11,7 @@ type PopupEvents = {
     'popup:toggle': Popup,
 };
 
-const emitter = mitt<Popup>()
+const emitter = mitt<PopupEvents>()
 
 export const useEvent = emitter.emit
 export const useListen = emitter.on

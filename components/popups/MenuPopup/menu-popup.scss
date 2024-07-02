@@ -3,4 +3,92 @@
   height: em(340);
   background: $background-color;
   top: em(160);
+  padding: em(48) 0;
+
+  &__font {
+    margin: 0;
+
+    &--text {
+      font-size: em(16);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    &--name {
+      font-size: em(20);
+      font-weight: $medium;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    &--price {
+      font-size: em(16);
+      font-weight: $medium;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+
+    &--title {
+      font-family: $font-accent;
+      font-size: em(32);
+      line-height: 110%;
+      text-transform: uppercase;
+    }
+  }
+
+  &__handler {
+    width: 100%;
+    max-width: em(1600);
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(2, em(100)) auto;
+    grid-template-rows: 1fr;
+    grid-column-gap: em(121);
+    grid-row-gap: 0;
+  }
+
+  &__row {
+    display: flex;
+    gap: em(65);
+  }
+
+  &__link {
+    display: block;
+    margin-bottom: em(24);
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+
+  &__title {
+    margin-bottom: em(48);
+  }
+
+  &__featured {
+    display: flex;
+    align-items: center;
+    gap: em(32);
+
+    &-content {
+      display: flex;
+      flex-direction: column;
+      gap: em(8);
+    }
+
+    &-img {
+      width: em(160);
+      height:  em(160);
+      border-radius: 50%;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
 }

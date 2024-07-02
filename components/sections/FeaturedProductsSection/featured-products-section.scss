@@ -1,0 +1,27 @@
+.featured-products-section {
+  padding: em(128) 0;
+
+  &__font {
+    &--title {
+      font-family: $font-accent;
+      font-size: em(128);
+      line-height: 110%;
+    }
+  }
+
+  &__title {
+    margin-bottom: em(96);
+    text-align: center;
+  }
+
+  &__holder {
+    width: 100%;
+    max-width: em(1600);
+    margin: 0 auto;
+  }
+
+  &__row {
+    display: flex;
+    gap: em(74);
+  }
+}
