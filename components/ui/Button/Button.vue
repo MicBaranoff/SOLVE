@@ -2,11 +2,11 @@
 import {defineProps} from 'vue';
 
 interface ComponentProps {
-  color: string;
-  filled: boolean;
+  color?: string;
+  filled?: boolean;
 }
 
-const props = withDefaults(defineProps<ComponentProps>(), {
+withDefaults(defineProps<ComponentProps>(), {
   color: 'black',
   filled: false,
 })

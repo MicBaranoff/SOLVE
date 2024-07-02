@@ -6,7 +6,7 @@ import ProductCard from "~/components/blocks/ProductCard/ProductCard.vue";
 import products from '~/config/productsData';
 
 interface ComponentProps {
-  title: string;
+  title?: string;
 }
 
 const props = withDefaults(defineProps<ComponentProps>(), {
@@ -32,6 +32,7 @@ const featuredProducts = computed(() => products.filter(product => product.featu
             :name="product.name"
             :price="product.price"
             :image="product.image"
+            :is-new="product.is_new"
         />
       </div>
     </div>

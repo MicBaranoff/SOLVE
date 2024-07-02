@@ -1,6 +1,5 @@
-<script lang="ts">
-import { defineComponent, ref } from 'vue';
-import type { PropType } from 'vue';
+<script setup lang="ts">
+import { defineProps, ref} from 'vue';
 
 import Burger from '~/components/ui/Burger/Burger.vue';
 
@@ -12,7 +11,7 @@ interface ComponentProps {
 
 const isActiveBurger = ref(false);
 
-function callPopup(isActiveStatus) {
+const callPopup = (isActiveStatus) => {
   isActiveBurger.value = !isActiveStatus;
 
   isActiveBurger.value ?
@@ -20,31 +19,15 @@ function callPopup(isActiveStatus) {
       useEvent('popup:close');
 }
 
-export default defineComponent({
-  name: 'Header',
-  components: { Burger },
-  props: {
-    invert: {
-      type: Boolean as PropType<boolean>,
-      default: false,
-    },
-  },
+withDefaults(defineProps<ComponentProps>(), {
+  invert: false,
+})
 
-  mounted() {
-    useListen('popup:close', () => {
-      isActiveBurger.value = false;
-    })
-  },
-
-  setup(props: ComponentProps) {
-    const { text, color, filled } = toRefs(props)
-
-    return {
-      text, color, filled, isActiveBurger, callPopup
-    };
-  }
-
-});
+onMounted(() => {
+  useListen('popup:close', () => {
+    isActiveBurger.value = false;
+  })
+})
 </script>
 
 <template>

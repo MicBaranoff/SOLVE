@@ -5,6 +5,7 @@ export default [
         price: '$ 249.00 USD',
         image: '/images/products/pr1.jpg',
         featured: true,
+        is_new: true,
     },
     {
         id: 1,

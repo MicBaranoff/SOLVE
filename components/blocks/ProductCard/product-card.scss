@@ -1,6 +1,7 @@
 .product-card {
   width: em(484);
   text-align: center;
+  position: relative;
 
   &__font {
     margin: 0;
@@ -18,6 +19,14 @@
       letter-spacing: 0.06em;
       text-transform: uppercase;
     }
+
+    &--badge {
+      font-weight: $bold;
+      font-size: em(16);
+      text-transform: uppercase;
+      text-align: center;
+      color: $text-color-invert;
+    }
   }
 
   &__image {
@@ -32,6 +41,21 @@
       height: 100%;
       object-fit: cover;
     }
+  }
+
+  &__badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    top: em(20);
+    right: em(32);
+
+    border-radius: 50%;
+    width: em(100);
+    height: em(100);
+    background: $text-color;
   }
 
   &__content {
