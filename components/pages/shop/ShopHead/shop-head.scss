@@ -1,0 +1,13 @@
+.shop-head {
+  padding: em(195) 0 em(128);
+
+  &__font {
+    &--title {
+      font-size: em(220);
+      line-height: 90%;
+      text-transform: uppercase;
+      text-align: center;
+      font-family: $font-accent;
+    }
+  }
+}

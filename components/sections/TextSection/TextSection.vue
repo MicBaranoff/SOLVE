@@ -12,7 +12,7 @@ const slots = useSlots();
 </script>
 
 <template>
-  <div class="text-section">
+  <section class="text-section">
     <div class="text-section__holder">
       <div class="text-section__title">
         <h2 class="text-section__font text-section__font--title">
@@ -30,7 +30,7 @@ const slots = useSlots();
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <style scoped lang="scss" src="./text-section.scss"></style>

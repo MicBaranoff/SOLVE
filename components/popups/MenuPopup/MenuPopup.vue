@@ -13,18 +13,18 @@
             Sølve
           </h3>
         </div>
-        <a href="#" class="menu-popup__link">
+        <NuxtLink to="/" class="menu-popup__link">
           <span class="menu-popup__font menu-popup__font--text">Home</span>
-        </a>
-        <a href="#" class="menu-popup__link">
+        </NuxtLink>
+        <NuxtLink to="#" class="menu-popup__link">
           <span class="menu-popup__font menu-popup__font--text">Rooms</span>
-        </a>
-        <a href="#" class="menu-popup__link">
+        </NuxtLink>
+        <NuxtLink to="#" class="menu-popup__link">
           <span class="menu-popup__font menu-popup__font--text">Journal</span>
-        </a>
-        <a href="#" class="menu-popup__link">
+        </NuxtLink>
+        <NuxtLink to="#" class="menu-popup__link">
           <span class="menu-popup__font menu-popup__font--text">Contact</span>
-        </a>
+        </NuxtLink>
       </div>
 
       <div class="menu-popup__col">
@@ -33,18 +33,18 @@
             Shop
           </h3>
         </div>
-        <a href="#" class="menu-popup__link">
+        <NuxtLink to="/" class="menu-popup__link">
           <span class="menu-popup__font menu-popup__font--text">Home</span>
-        </a>
-        <a href="#" class="menu-popup__link">
+        </NuxtLink>
+        <NuxtLink to="#" class="menu-popup__link">
           <span class="menu-popup__font menu-popup__font--text">Rooms</span>
-        </a>
-        <a href="#" class="menu-popup__link">
+        </NuxtLink>
+        <NuxtLink to="#" class="menu-popup__link">
           <span class="menu-popup__font menu-popup__font--text">Journal</span>
-        </a>
-        <a href="#" class="menu-popup__link">
+        </NuxtLink>
+        <NuxtLink to="#" class="menu-popup__link">
           <span class="menu-popup__font menu-popup__font--text">Contact</span>
-        </a>
+        </NuxtLink>
       </div>
 
       <div class="menu-popup__col">

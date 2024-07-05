@@ -1,0 +1,15 @@
+.shop-catalog {
+
+  &__holder {
+    padding: em(128) 0;
+    width: 100%;
+    max-width: em(1600);
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    grid-column-gap: em(74);
+    grid-row-gap: em(92);
+  }
+}

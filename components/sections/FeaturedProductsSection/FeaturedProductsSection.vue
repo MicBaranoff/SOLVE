@@ -17,7 +17,7 @@ const featuredProducts = computed(() => products.filter(product => product.featu
 </script>
 
 <template>
-  <div class="featured-products-section">
+  <section class="featured-products-section">
     <div class="featured-products-section__holder">
       <div class="featured-products-section__title">
         <h2 class="featured-products-section__font featured-products-section__font--title">
@@ -36,7 +36,7 @@ const featuredProducts = computed(() => products.filter(product => product.featu
         />
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <style scoped lang="scss" src="./featured-products-section.scss"></style>

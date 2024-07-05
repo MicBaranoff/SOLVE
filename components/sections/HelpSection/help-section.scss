@@ -1,0 +1,50 @@
+.help-section {
+  border-top: 1px solid $border-color;
+  padding: em(128) 0;
+
+  &__font {
+    &--title {
+      font-family: $font-accent;
+      font-size: em(96);
+      line-height: 110%;
+    }
+
+    &--subtitle {
+      font-family: $font-accent;
+      font-size: em(36);
+      line-height: 110%;
+    }
+
+    &--text {
+      font-size: em(18);
+      line-height: 180%;
+    }
+  }
+
+  &__holder {
+    width: 100%;
+    max-width: em(1600);
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__wrapper {
+    display: flex;
+    gap: em(96);
+  }
+
+  &__item {
+    width: em(455);
+
+    &-btn {
+      width: auto;
+      margin-top: em(32);
+    }
+
+    &-title {
+      margin-bottom: em(48);
+    }
+  }
+}

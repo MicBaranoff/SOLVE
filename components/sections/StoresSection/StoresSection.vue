@@ -9,7 +9,7 @@ const goToLink = (link) => {
 </script>
 
 <template>
-  <div class="stores-section">
+  <section class="stores-section">
     <div class="stores-section__holder">
       <div class="stores-section__title">
         <h2 class="stores-section__font stores-section__font--title">Our Stores</h2>
@@ -33,7 +33,7 @@ const goToLink = (link) => {
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <style scoped lang="scss" src="./stores-section.scss"></style>

@@ -75,6 +75,10 @@
   }
 
   &__logo {
+    position: absolute;
+    bottom: em(10);
+    left: 50%;
+    transform: translateX(-50%);
     width: em(94);
     height: em(35);
 
