@@ -44,7 +44,7 @@ onMounted(() => {
         <NuxtLink class="header__link" href="/cart">
           <span class="header__font header__font-text">Cart</span>
           <span class="header__counter">
-            <span class="header__font header__font-count">4</span>
+            <span class="header__font header__font-count">0</span>
           </span>
         </NuxtLink>
 

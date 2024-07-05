@@ -27,4 +27,11 @@
       color: $text-color;
     }
   }
+
+  &--filled {
+    &-black {
+      background: $text-color;
+      color: $text-color-invert;
+    }
+  }
 }
