@@ -42,7 +42,7 @@ const BUTTONS_DATA = [
       </p>
 
       <div class="product-main__buy">
-        <input readonly value="0" class="product-main__input" min="1" max="99" type="number">
+        <span class="product-main__input" >0</span>
 
         <Button filled color="black">
           Add to cart

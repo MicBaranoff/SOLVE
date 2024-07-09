@@ -39,7 +39,9 @@
     width: em(101);
     height: em(68);
 
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     font-weight: $medium;
     font-size: em(16);
