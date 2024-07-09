@@ -4,6 +4,48 @@
   align-items: center;
   gap: em(100);
 
+  &__font {
+    &--title {
+      font-family: $font-accent;
+      font-size: em(128);
+      line-height: 110%;
+    }
+
+    &--price {
+      font-weight: $medium;
+      font-size: em(16);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    &--desc {
+      font-size: em(20);
+      line-height: 180%;
+    }
+  }
+
+  &__buy {
+    margin-top: em(48);
+    display: flex;
+    gap: em(16);
+  }
+
+  &__input {
+    -webkit-appearance: none;
+    box-shadow: none;
+    background: $text-color-invert;
+    border: 1px solid $text-color;
+    border-radius: em(500);
+    width: em(101);
+    height: em(68);
+
+    text-align: center;
+
+    font-weight: $medium;
+    font-size: em(16);
+    color: $text-color;
+  }
+
   &__image {
     width: 50vw;
     height: 100dvh;
@@ -13,5 +55,10 @@
       height: 100%;
       object-fit: cover;
     }
+  }
+
+  &__info {
+    margin-top: em(48);
+    max-width: em(640);
   }
 }

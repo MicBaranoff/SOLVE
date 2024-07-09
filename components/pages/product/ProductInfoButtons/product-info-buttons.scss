@@ -1,0 +1,25 @@
+.product-info-buttons {
+  width: 100%;
+  padding: em(32) 0;
+  border-top: 1px solid $border-color;
+  border-bottom: 1px solid $border-color;
+
+  &__font {
+    &--text {
+      font-weight: $medium;
+      font-size: em(16);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+  }
+
+  &__holder {
+    display: flex;
+    gap: em(48);
+  }
+
+  &__item {
+    width: auto;
+  }
+
+}

@@ -1,5 +1,24 @@
 <script setup lang="ts">
 import Button from "~/components/ui/Button/Button.vue";
+import ProductInfoButtons from "~/components/pages/product/ProductInfoButtons/ProductInfoButtons.vue";
+
+const BUTTONS_DATA = [
+  {
+    id: 'Details',
+    type: 'DetailsPopup',
+    text: 'Details',
+  },
+  {
+    id: 'Delivery',
+    type: 'DeliveryPopup',
+    text: 'Delivery',
+  },
+  {
+    id: 'Returns',
+    type: 'ReturnsPopup',
+    text: 'Returns',
+  },
+]
 </script>
 
 <template>
@@ -23,12 +42,14 @@ import Button from "~/components/ui/Button/Button.vue";
       </p>
 
       <div class="product-main__buy">
-        <input readonly class="product-main__input" min="1" max="99" type="number">
+        <input readonly value="0" class="product-main__input" min="1" max="99" type="number">
 
         <Button filled color="black">
           Add to cart
         </Button>
       </div>
+
+      <ProductInfoButtons :buttons="BUTTONS_DATA" class="product-main__info" />
     </div>
   </div>
 </template>
