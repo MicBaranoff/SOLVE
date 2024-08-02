@@ -15,3 +15,4 @@ const emitter = mitt<PopupEvents>()
 
 export const useEvent = emitter.emit
 export const useListen = emitter.on
+export const useDestroy = emitter.off

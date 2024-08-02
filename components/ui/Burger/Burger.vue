@@ -8,12 +8,12 @@ interface ComponentProps {
 
 const emit = defineEmits(['click']);
 
-const props = withDefaults(defineProps<ComponentProps>(), {
+withDefaults(defineProps<ComponentProps>(), {
   invert: false,
   isActive: false,
 })
 
-const toggle = (isActive) => {
+const toggle = (isActive: boolean) => {
   emit('click', isActive)
 }
 </script>

@@ -9,14 +9,13 @@ interface ComponentProps {
   invert?: boolean;
 }
 
-const isActiveBurger = ref(false);
+const isActiveBurger = ref<boolean>(false);
 
-const callPopup = (isActiveStatus) => {
+const callPopup = (isActiveStatus: boolean) => {
   isActiveBurger.value = !isActiveStatus;
 
-  isActiveBurger.value ?
-      useEvent('popup:open', { name: 'MenuPopup' }) :
-      useEvent('popup:close');
+  isActiveBurger.value && useEvent('popup:open', { name: 'MenuPopup' });
+  !isActiveBurger.value && useEvent('popup:close');
 }
 
 withDefaults(defineProps<ComponentProps>(), {
@@ -34,7 +33,7 @@ onMounted(() => {
   <header :class="{'header--invert': invert}" class="header">
     <div class="header__wrapper">
       <span class="header__font header__font-text">Lookbook</span>
-      <a href="" class="header__logo">
+      <a href="/" class="header__logo">
         <nuxt-icon class="header__logo-pic" name="logo" />
       </a>
       <div class="header__wrap">

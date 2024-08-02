@@ -2,6 +2,14 @@
 import Button from "~/components/ui/Button/Button.vue";
 import ProductInfoButtons from "~/components/pages/product/ProductInfoButtons/ProductInfoButtons.vue";
 
+import {defineEmits, defineProps} from "vue";
+
+import {useCart} from "~/store/cart";
+
+const { addToCart } = useCart();
+
+console.log(addToCart);
+
 const BUTTONS_DATA = [
   {
     id: 'Details',
@@ -19,32 +27,40 @@ const BUTTONS_DATA = [
     text: 'Returns',
   },
 ]
+
+interface ComponentProps {
+  data: object;
+}
+
+defineProps<ComponentProps>()
+
+defineEmits(['click']);
+
 </script>
 
 <template>
   <div class="product-main">
     <div class="product-main__image">
-      <NuxtImg src="/images/rooms/room1.jpg" alt="" />
+      <NuxtImg :src="data.image" alt="" />
     </div>
 
     <div class="product-main__info">
       <div class="product-main__title">
         <h2 class="product-main__font product-main__font--title">
-          Elegant
-          Lamp
+          {{ data.name }}
         </h2>
       </div>
       <p class="product-main__font product-main__font--price">
-        $ 129.00 USD
+        {{ data.price }}
       </p>
       <p class="product-main__font product-main__font--desc">
-        Mauris cursus mattis molestie a iaculis at erat pellentesque adipiscing. Netus et malesuada fames ac turpis egestas integer eget.
+        {{ data.description }}
       </p>
 
       <div class="product-main__buy">
         <span class="product-main__input" >0</span>
 
-        <Button filled color="black">
+        <Button @click="addToCart(data)" filled color="black">
           Add to cart
         </Button>
       </div>

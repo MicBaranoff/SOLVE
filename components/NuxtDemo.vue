@@ -132,7 +132,7 @@
 <script lang="ts" setup>
 import { useI18n } from 'vue-i18n'
 
-import { useCounter } from '@/store/counter'
+import { useCounter } from '~/store/cart'
 import { isDark, toggleDark } from '@/composables/dark'
 
 const { t, locale, availableLocales } = useI18n()

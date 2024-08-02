@@ -1,45 +1,46 @@
-<script lang="ts">
+<script setup lang="ts">
+import { ref } from 'vue';
+
+import {useListen, useEvent, useDestroy} from "~/composables/useEventBus";
+
 import MenuPopup from "~/components/popups/MenuPopup/MenuPopup.vue";
 
-import { defineComponent, ref } from 'vue';
+const popups = {
+  MenuPopup,
+}
 
-import {useListen, useEvent} from "~/composables/useEventBus";
+const route = useRoute();
 
-const isActive = ref<boolean>(false)
-const currentPopup = ref<string>(null)
+const isActive = ref<boolean>(false);
+const currentPopup = shallowRef<object|null>(null);
 
+watch(() => route.fullPath, () => {
+  useEvent('popup:close');
+});
 
-function closePopup() {
+onMounted(() => {
+  useListen('popup:open', openPopupHandler);
+  useListen('popup:close', closePopup);
+});
+
+onBeforeUnmount(() => {
+  useDestroy('popup:open', openPopupHandler);
+  useDestroy('popup:close', closePopup);
+})
+
+const closePopup = () => {
   isActive.value = false;
   currentPopup.value = null;
 }
 
-function openPopup(name) {
-  currentPopup.value = name;
+const openPopup = (name: string) => {
+  currentPopup.value = popups[name];
   isActive.value = !isActive.value;
 }
 
-export default defineComponent({
-  components: {
-    MenuPopup,
-  },
-
-  mounted() {
-    useListen('popup:open', ({ name }) => {
-      openPopup(name)
-    });
-
-    useListen('popup:close', closePopup);
-  },
-
-  setup() {
-    return {
-      isActive,
-      currentPopup,
-      closePopup,
-    }
-  }
-})
+const openPopupHandler = ({ name }: { name: string }) => {
+  openPopup(name)
+}
 </script>
 
 <template>
