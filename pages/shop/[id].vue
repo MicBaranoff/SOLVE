@@ -4,8 +4,8 @@ import ProductMain from "~/components/pages/product/ProductMain/ProductMain.vue"
 import productsData from "~/config/productsData";
 
 const { params } = useRoute();
-const productID = params.id
-const productData = productsData.find(pr => pr.id === productID)
+const productID = params.id;
+const productData = productsData.find(pr => pr.id === productID) || {};
 
 console.log();
 </script>

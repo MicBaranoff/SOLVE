@@ -5,6 +5,14 @@ import Burger from '~/components/ui/Burger/Burger.vue';
 
 import { useEvent, useListen } from '~/composables/useEventBus';
 
+import { storeToRefs } from 'pinia';
+
+import {useCart} from "~/store/cart";
+
+const cart = useCart();
+
+const { getCartLength } = storeToRefs(cart);
+
 interface ComponentProps {
   invert?: boolean;
 }
@@ -43,7 +51,9 @@ onMounted(() => {
         <NuxtLink class="header__link" href="/cart">
           <span class="header__font header__font-text">Cart</span>
           <span class="header__counter">
-            <span class="header__font header__font-count">0</span>
+            <span class="header__font header__font-count">
+              {{getCartLength}}
+            </span>
           </span>
         </NuxtLink>
 

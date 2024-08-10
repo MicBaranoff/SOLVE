@@ -1,7 +1,13 @@
 import { defineStore } from 'pinia'
 
+type Item = {
+  id: string,
+  quantity: number
+}
+
+
 interface CartState {
-  cart: [],
+  cart: Item[]
 }
 
 export const useCart = defineStore('cart', {
@@ -10,9 +16,9 @@ export const useCart = defineStore('cart', {
   }),
 
   actions: {
-    addToCart(item: object) {
-      const cartItemIndex = this.cart.findIndex((pr: object) => pr?.id === item?.id);
-      const cartItem = this.cart.find((pr: object) => pr?.id === item?.id);
+    addToCart(item: Item) {
+      const cartItemIndex = this.cart.findIndex((pr: Item) => pr?.id === item?.id);
+      const cartItem = this.cart.find((pr: Item) => pr?.id === item?.id);
       const inCart = cartItemIndex !== -1;
 
       if (!inCart) {
@@ -22,12 +28,19 @@ export const useCart = defineStore('cart', {
         });
       } else {
         this.cart.splice(cartItemIndex, 1, {
-          ...cartItem,
-          quantity: cartItem.quantity + 1,
+          ...item,
+          quantity: (cartItem?.quantity || 0) + 1,
         })
       }
-
-      console.log(this.cart);
     }
+  },
+
+  getters: {
+    getProductCartCount: (state) => {
+      return (productID: string) => state.cart.find((prod) => prod.id === productID)?.quantity || 0
+    },
+    getCartLength(state): number {
+      return state.cart.length || 0
+    },
   }
 })

@@ -6,9 +6,7 @@ import {defineEmits, defineProps} from "vue";
 
 import {useCart} from "~/store/cart";
 
-const { addToCart } = useCart();
-
-console.log(addToCart);
+const { addToCart, getProductCartCount } = useCart();
 
 const BUTTONS_DATA = [
   {
@@ -28,8 +26,16 @@ const BUTTONS_DATA = [
   },
 ]
 
+type Item = {
+  id: string,
+  quantity: number,
+  name: string,
+  price: number,
+  description: string,
+}
+
 interface ComponentProps {
-  data: object;
+  data: Item;
 }
 
 defineProps<ComponentProps>()
@@ -58,7 +64,9 @@ defineEmits(['click']);
       </p>
 
       <div class="product-main__buy">
-        <span class="product-main__input" >0</span>
+        <span class="product-main__input" >
+          {{ getProductCartCount(data.id) }}
+        </span>
 
         <Button @click="addToCart(data)" filled color="black">
           Add to cart
