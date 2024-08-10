@@ -1,0 +1,53 @@
+.shop-info-popup {
+  width: 50vw;
+  height: 100dvh;
+  background: $background-color;
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: em(64);
+  overflow: auto;
+
+  &__font {
+    &--title{
+      font-family: $font-accent;
+      font-size: em(36);
+      line-height: 110%;
+    }
+    &--text {
+      font-size: em(18);
+      line-height: 180%;
+    }
+
+    &--button {
+      font-weight: $medium;
+      font-size: em(16);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+  }
+
+  &__holder {
+    max-width: em(640);
+    margin: 0 auto;
+  }
+
+  &__block {
+    border-top: 1px solid $border-color;
+    padding: em(64) 0;
+
+    &:first-child {
+      padding-top: 0;
+      border-top: none;
+    }
+  }
+
+  &__block-title {
+    margin-bottom: em(24);
+  }
+
+  &__button {
+    margin: 0 auto;
+    margin-bottom: em(64);
+  }
+}

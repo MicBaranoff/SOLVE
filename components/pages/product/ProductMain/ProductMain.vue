@@ -6,6 +6,7 @@ import ProductDescription from "~/components/pages/product/ProductDescription/Pr
 import {defineEmits, defineProps} from "vue";
 
 import {useCart} from "~/store/cart";
+import {useEvent} from "~/composables/useEventBus";
 
 const { addToCart, getProductCartCount } = useCart();
 
@@ -47,6 +48,10 @@ defineProps<ComponentProps>()
 
 defineEmits(['click']);
 
+const onButtonInfoClickHandler = () => {
+  useEvent('popup:open', { name: 'ShopInfoPopup', zIndex: 2 });
+}
+
 </script>
 
 <template>
@@ -79,7 +84,9 @@ defineEmits(['click']);
           </Button>
         </div>
 
-        <ProductInfoButtons :buttons="BUTTONS_DATA" class="product-main__info" />
+        <ProductInfoButtons
+            @click="onButtonInfoClickHandler"
+            :buttons="BUTTONS_DATA" class="product-main__info" />
       </div>
     </div>
     <ProductDescription :content="data.descriptionFull" />
