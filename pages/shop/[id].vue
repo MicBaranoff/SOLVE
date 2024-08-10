@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import ProductMain from "~/components/pages/product/ProductMain/ProductMain.vue";
+import FeaturedProductsSection from "~/components/sections/FeaturedProductsSection/FeaturedProductsSection.vue";
+
 
 import productsData from "~/config/productsData";
 
@@ -14,6 +16,7 @@ console.log();
   <NuxtLayout name="default">
     <div class="product-page">
       <ProductMain :data="productData" />
+      <FeaturedProductsSection title="Related" />
     </div>
   </NuxtLayout>
 </template>

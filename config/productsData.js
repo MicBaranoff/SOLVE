@@ -10,6 +10,15 @@ export default [
         image: '/images/products/pr1.jpg',
         featured: true,
         is_new: true,
+        descriptionFull: `
+            <p>Mauris cursus mattis molestie a iaculis at erat pellentesque adipiscing. Netus et malesuada fames ac turpis egestas integer eget. A diam maecenas sed enim ut sem viverra aliquet eget. Vel fringilla est ullamcorper eget nulla facilisi etiam. Velit egestas dui id ornare arcu odio ut. Felis donec et odio pellentesque diam volutpat commodo sed egestas. Auctor eu augue ut lectus arcu bibendum at varius. Rhoncus mattis rhoncus urna neque viverra justo nec ultrices.</p>
+    
+            <ul>
+                <li>Proin fermentum leo vel orci porta non pulvinar</li>
+                <li>Diam phasellus vestibulum </li>
+                <li>Quisque egestas diam in arcu cursus</li>
+            </ul>
+        `,
     },
     {
         id: 'elegant-lamp',
