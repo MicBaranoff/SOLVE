@@ -29,6 +29,7 @@ const featuredProducts = computed(() => products.filter(product => product.featu
         <ProductCard
             v-for="product in featuredProducts"
             :key="product.id"
+            :id="product.id"
             :name="product.name"
             :price="product.price"
             :image="product.image"

@@ -1,0 +1,98 @@
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid $border-color;
+  margin-top: em(32);
+  padding-top: em(32);
+
+  &:first-child{
+    border: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__font {
+    display: block;
+
+    &--name {
+      font-size: em(20);
+      letter-spacing: 0.05em;
+      font-weight: $medium;
+      text-transform: uppercase;
+    }
+
+    &--remove {
+      font-size: em(14);
+      letter-spacing: 0.1em;
+      font-weight: $medium;
+      text-transform: uppercase;
+    }
+
+    &--price {
+      font-size: em(16);
+      letter-spacing: 0.06em;
+      font-weight: $medium;
+    }
+
+    &--text {
+      font-size: em(20);
+      letter-spacing: 0.05em;
+      font-weight: $medium;
+      text-transform: uppercase;
+    }
+
+    &--button {
+      font-weight: $medium;
+      font-size: em(16);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+  }
+
+  &__remove-btn {
+    width: auto;
+    display: inline-block;
+    margin-left: 0;
+    margin-right: auto;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex: 1;
+    padding: 0 em(24);
+  }
+
+  &__input {
+    -webkit-appearance: none;
+    box-shadow: none;
+    background: $text-color-invert;
+    border: 1px solid $text-color;
+    border-radius: em(500);
+    width: em(65);
+    height: em(52);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-weight: $medium;
+    font-size: em(16);
+    color: $text-color;
+  }
+
+  &__pic {
+    width: em(70);
+    height: em(100);
+    border-radius: em(100);
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}

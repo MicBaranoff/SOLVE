@@ -5,10 +5,12 @@ import {useListen, useEvent, useDestroy} from "~/composables/useEventBus";
 
 import MenuPopup from "~/components/popups/MenuPopup/MenuPopup.vue";
 import ShopInfoPopup from "~/components/popups/ShopInfoPopup/ShopInfoPopup.vue";
+import CartPopup from "~/components/popups/CartPopup/CartPopup.vue";
 
 const popups = {
   MenuPopup,
   ShopInfoPopup,
+  CartPopup,
 }
 
 const route = useRoute();

@@ -2,7 +2,8 @@ import { defineStore } from 'pinia'
 
 type Item = {
   id: string,
-  quantity: number
+  quantity: number,
+  price: number,
 }
 
 
@@ -32,10 +33,24 @@ export const useCart = defineStore('cart', {
           quantity: (cartItem?.quantity || 0) + 1,
         })
       }
+    },
+    removeFromCart(itemID: string) {
+      const cartItemIndex = this.cart.findIndex((pr: Item) => pr?.id === itemID);
+
+      this.cart.splice(cartItemIndex, 1)
     }
   },
 
   getters: {
+    getCart: (state) => {
+      return state.cart;
+    },
+    getCartTotalPrice: (state) => {
+      return state.cart.reduce(
+          (accumulator, product: Item) => accumulator + (product.price * product.quantity),
+          0,
+      ) || 0;
+    },
     getProductCartCount: (state) => {
       return (productID: string) => state.cart.find((prod) => prod.id === productID)?.quantity || 0
     },

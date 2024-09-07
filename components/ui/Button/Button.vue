@@ -4,6 +4,7 @@ import {defineProps} from 'vue';
 interface ComponentProps {
   color?: string;
   filled?: boolean;
+  type?: string;
 }
 
 withDefaults(defineProps<ComponentProps>(), {
@@ -14,7 +15,7 @@ withDefaults(defineProps<ComponentProps>(), {
 
 <template>
   <button
-    type="button"
+    :type="type || 'button'"
     class="button"
     :class="{
     [`button--color-${color}`]: color,

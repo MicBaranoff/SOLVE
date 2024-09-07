@@ -1,7 +1,13 @@
 <script setup lang="ts">
   import products from '~/config/productsData';
 
-  const featuredProducts = computed(() => products.filter(product => product.featured))
+  const featuredProducts = computed(() => products.filter(product => product.featured));
+
+  const router = useRouter();
+
+  const goToProductShop = (productID: string) => {
+    router.push('/shop/' + productID)
+  }
 </script>
 
 <template>
@@ -58,6 +64,7 @@
           <div v-for="item in featuredProducts"
                class="menu-popup__featured"
                :key="item.id"
+               @click="goToProductShop(item.id)"
           >
             <div class="menu-popup__featured-img">
               <img :src="item.image" alt="">
@@ -65,7 +72,7 @@
 
             <div class="menu-popup__featured-content">
               <p class="menu-popup__font menu-popup__font--name">{{item.name}}</p>
-              <p class="menu-popup__font menu-popup__font--price">{{item.price}}</p>
+              <p class="menu-popup__font menu-popup__font--price">$ {{item.price}} USD</p>
             </div>
           </div>
         </div>

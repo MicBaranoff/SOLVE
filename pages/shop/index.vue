@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import ShopHead from "~/components/pages/shop/ShopHead/ShopHead.vue";
+import PageHead from "~/components/blocks/PageHead/PageHead.vue";
 import ShopCatalog from "~/components/pages/shop/ShopCatalog/ShopCatalog.vue";
 import HelpSection from "~/components/sections/HelpSection/HelpSection.vue";
 </script>
@@ -7,7 +7,7 @@ import HelpSection from "~/components/sections/HelpSection/HelpSection.vue";
 <template>
   <NuxtLayout name="default">
     <div class="shop-page">
-      <ShopHead />
+      <PageHead title="Shop" />
       <ShopCatalog />
       <HelpSection />
     </div>

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 interface ComponentProps {
-  content: string;
+  content: string | undefined;
 }
 
 defineProps<ComponentProps>()

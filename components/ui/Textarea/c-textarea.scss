@@ -1,0 +1,36 @@
+.c-textarea {
+  display: block;
+
+  &__font {
+    &--label {
+      font-size: em(16);
+      font-weight: $medium;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+  }
+
+  &__label {
+    display: block;
+  }
+
+  &__field {
+    font-weight: 400;
+    font-size: em(18);
+    line-height: 160%;
+
+    width: 100%;
+    height: em(200, 18);
+    margin-top: em(16, 18);
+    padding: em(16, 18) em(24, 18);
+
+    -webkit-appearance: none;
+    border: 1px solid $text-color;
+    box-shadow: none;
+    resize: none;
+
+    &::placeholder {
+      opacity: 0.5;
+    }
+  }
+}

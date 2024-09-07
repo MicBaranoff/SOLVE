@@ -1,0 +1,35 @@
+.c-input {
+  display: block;
+
+  &__font {
+    &--label {
+      font-size: em(16);
+      font-weight: $medium;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+  }
+
+  &__label {
+    display: block;
+  }
+
+  &__field {
+    font-weight: 400;
+    font-size: em(18);
+    line-height: 160%;
+
+    width: 100%;
+    height: em(61, 18);
+    margin-top: em(16, 18);
+    padding: 0 em(24, 18);
+
+    -webkit-appearance: none;
+    border: 1px solid $text-color;
+    box-shadow: none;
+
+    &::placeholder {
+      opacity: 0.5;
+    }
+  }
+}

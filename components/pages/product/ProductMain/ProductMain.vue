@@ -68,7 +68,7 @@ const onButtonInfoClickHandler = () => {
           </h2>
         </div>
         <p class="product-main__font product-main__font--price">
-          {{ data.price }}
+          $ {{data.price}} USD
         </p>
         <p class="product-main__font product-main__font--desc">
           {{ data.description }}

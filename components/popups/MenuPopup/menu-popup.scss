@@ -71,6 +71,7 @@
     display: flex;
     align-items: center;
     gap: em(32);
+    cursor: pointer;
 
     &-content {
       display: flex;

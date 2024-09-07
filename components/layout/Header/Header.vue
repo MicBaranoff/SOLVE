@@ -17,15 +17,6 @@ interface ComponentProps {
   invert?: boolean;
 }
 
-const isActiveBurger = ref<boolean>(false);
-
-const callPopup = (isActiveStatus: boolean) => {
-  isActiveBurger.value = !isActiveStatus;
-
-  isActiveBurger.value && useEvent('popup:open', { name: 'MenuPopup' });
-  !isActiveBurger.value && useEvent('popup:close');
-}
-
 withDefaults(defineProps<ComponentProps>(), {
   invert: false,
 })
@@ -35,6 +26,19 @@ onMounted(() => {
     isActiveBurger.value = false;
   })
 })
+
+const isActiveBurger = ref<boolean>(false);
+
+const callPopup = (isActiveStatus: boolean) => {
+  isActiveBurger.value = !isActiveStatus;
+
+  isActiveBurger.value && useEvent('popup:open', { name: 'MenuPopup' });
+  !isActiveBurger.value && useEvent('popup:close');
+}
+
+const callCartPopup = () => {
+  useEvent('popup:open', { name: 'CartPopup', zIndex: 2 })
+}
 </script>
 
 <template>
@@ -48,14 +52,14 @@ onMounted(() => {
         <NuxtLink class="header__link" to="/shop">
           <span class="header__font header__font-text">Shop</span>
         </NuxtLink>
-        <NuxtLink class="header__link" href="/cart">
+        <span @click="callCartPopup" class="header__link">
           <span class="header__font header__font-text">Cart</span>
           <span class="header__counter">
             <span class="header__font header__font-count">
               {{getCartLength}}
             </span>
           </span>
-        </NuxtLink>
+        </span>
 
         <Burger @click="callPopup" :is-active="isActiveBurger" :invert="invert" />
       </div>
