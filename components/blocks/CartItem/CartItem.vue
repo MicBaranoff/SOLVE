@@ -33,9 +33,9 @@
         </span>
       </div>
       <button @click="$emit('onRemove', data.id)" class="cart-item__remove-btn">
-          <span class="cart-item__font cart-item__font--remove">
-            Remove
-          </span>
+        <span class="cart-item__font cart-item__font--remove">
+          Remove
+        </span>
       </button>
     </div>
     <span class="cart-item__input" >
